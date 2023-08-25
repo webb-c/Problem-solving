@@ -13,7 +13,7 @@ def get_gcd(a, b):
 def main():
     A, B = map(int, input().split())
     gcd = get_gcd(A, B)
-    print(''.join(['1']*gcd))
+    print("1"*gcd)
 
 if __name__ == "__main__":
     main()
