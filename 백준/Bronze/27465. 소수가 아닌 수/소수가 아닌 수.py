@@ -4,12 +4,13 @@ def input():
     return sys.stdin.readline().rstrip()
 
 def main():
-    # 2가 아닌 짝수는 모두 소수임을 활용
     N = int(input())
-    if N == 1:
+    if N <= 2:
         print(4)
+    elif N % 2 != 0:
+        print(N+1)
     else:
-        print(2*N)
+        print(N)
 
 if __name__ == "__main__":
     main()
