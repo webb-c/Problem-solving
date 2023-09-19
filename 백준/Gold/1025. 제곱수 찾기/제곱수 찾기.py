@@ -11,19 +11,32 @@ def check(n):
 
 def main():
     N, M = map(int, input().split())
-    table = [input() for _ in range(N)]
+    table = []
+    cantList = [2, 3, 7, 8]
+    flag = True
+    for _ in range(N):
+        numList = list(map(int, list(input())))
+        if flag:
+            for n in numList:
+                if n not in cantList:
+                    flag = False
+                    break
+        table.append(numList)
+    if flag:
+        print(-1)
+        return
+
     maxNum = -1
     for i in range(N):
         for j in range(M):
             for ii in range(-N, N):
                 for jj in range(-M, M):
                     ni, nj = i, j
-                    tempNum = ""
+                    tempNum = 0
                     while 0 <= ni < N and 0 <= nj < M:
-                        tempNum += table[ni][nj]
-                        tempNum_int = int(tempNum)
-                        if tempNum_int > maxNum and check(tempNum_int):
-                            maxNum = tempNum_int
+                        tempNum = tempNum*10 + table[ni][nj]
+                        if tempNum > maxNum and check(tempNum):
+                            maxNum = tempNum
                         if ii == 0 and jj == 0:
                             break
                         ni, nj = ni+ii, nj+jj
