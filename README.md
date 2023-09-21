@@ -20,4 +20,4 @@
   - [ ] _\#number_theory_ Gold All Solve (한국어 문제)
 - **개인 문제집**
   - [ ] 문제집 : [우주](https://www.acmicpc.net/workbook/view/16027) (3/25)
-  - [ ] 문제집 : [리악귀](https://www.acmicpc.net/workbook/view/16673) (1/13)
+  - [ ] 문제집 : [리악귀](https://www.acmicpc.net/workbook/view/16673) (3/13)
