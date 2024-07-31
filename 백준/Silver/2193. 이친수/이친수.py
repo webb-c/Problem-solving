@@ -2,17 +2,15 @@ import sys
 sys.setrecursionlimit(10**6)
 
 def get_hit_binary(N):
-    prev_info = [0, 1] # init
+    prev_0, prev_1 = 0, 1
     
     for n in range(2, N+1):
-        curr_info = [0, 0]
+        new_0 = prev_0 + prev_1
+        new_1 = prev_0
         
-        curr_info[0] = prev_info[0] + prev_info[1]
-        curr_info[1] = prev_info[0]
-            
-        prev_info, curr_info = curr_info, prev_info 
+        prev_0, prev_1 = new_0, new_1
     
-    return sum(prev_info)
+    return prev_0 + prev_1
 
 
 def input():
