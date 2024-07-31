@@ -1,4 +1,4 @@
-# BaekjoonHub
+# Problem Solving
 
 [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub) 플러그인을 사용하여 해결한 백준 문제의 코드를 업로드하기 위한 레포지토리.
 
