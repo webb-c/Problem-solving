@@ -1,11 +1,32 @@
 import sys
-input = sys.stdin.readline
 
-n = int(input())
-score = [ int(input()) for _ in range(n) ]
-dp = [ 0 for i in range(n) ]
-dp[0] = score[0]
-if 2 <= n : dp[1] = score[0] + score[1]
-for i in range(2, n):
-    dp[i] = max(dp[i-2], dp[i-3]+score[i-1]) + score[i] # 이전이전(+현재) or 이전이전이전+(이전+현재)
-print(dp[n-1])
+def get_max_step_score(n, scores):
+    DP = [0] * n
+    DP[0], DP[1], DP[2] = scores[0], scores[0]+scores[1], max(scores[1]+scores[2], scores[0]+scores[2])
+    
+    for i in range(3, n):
+        DP[i] = max(DP[i-2], DP[i-3]+scores[i-1]) + scores[i]
+        
+    return DP[-1]
+
+
+def input():
+    return sys.stdin.readline().rstrip()
+
+
+def solve():
+    n = int(input())
+    scores = [int(input()) for _ in range(n)]
+    
+    if n == 1:
+        print(sum(scores))
+    elif n == 2:
+        print(sum(scores))
+    else:
+        print(get_max_step_score(n, scores))
+    
+
+
+if __name__ == "__main__":
+    solve()
+    
