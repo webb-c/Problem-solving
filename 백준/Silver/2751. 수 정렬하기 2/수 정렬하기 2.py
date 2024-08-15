@@ -1,9 +1,19 @@
 import sys
-input = sys.stdin.readline
-N = int(input())
-numList = [0 for _ in range(2000001)]
-for _ in range(N) :
-    idx = int(input()) + 1000000
-    numList[idx] += 1
-for idx, n in enumerate(numList) :
-    if n != 0 : print(idx-1000000)
+
+
+def input():
+    return sys.stdin.readline().rstrip()
+
+
+def solve():
+    N = int(input())
+    num_list = [int(input()) for _ in range(N)]
+    num_list.sort()
+    
+    for i in range(N):
+        print(num_list[i])
+    
+
+if __name__ == "__main__":
+    solve()
+    
